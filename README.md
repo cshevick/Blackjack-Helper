@@ -1,8 +1,38 @@
-# Blackjack-Helper
-Blackjack helper that helps the user make decisions as well as counts cards (not used for profit). (Python, Pandas, CSVs)
+# Card Counter and Blackjack Decision-Making Application
 
--Developed a blackjack strategy bot that advises users on optimal gameplay actions based on "the book" of basic blackjack strategy; utilized the pandas library to extract these strategies from a CSV file, ensuring accurate and quick recommendations.
+This project is a Python-based application designed to help users count cards and make optimal decisions while playing blackjack. The application features a card counter that updates running and true counts and provides betting advice based on the true count. It also includes a decision-making module that guides users on the best actions to take based on their hand and the dealer's up card.
 
--Implemented a card-counting feature within the code that tracks both the running and true counts of the cards dealt; this allows the bot to calculate and suggest the optimal betting amount for upcoming hands based on the count.
+## Table of Contents
 
--Conducted thorough testing of the code in a simulated environment to validate functionality and performance; the project was designed for educational purposes and to enhance understanding of programming, not for profit or real gambling.
+- [Overview](#overview)
+- [Features](#features)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [File Descriptions](#file-descriptions)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+This application helps blackjack players by providing two main functionalities:
+1. **Card Counting:** Keeps track of the running and true counts and suggests optimal betting strategies.
+2. **Decision Making:** Uses a pre-loaded strategy chart to recommend the best action (Hit, Stand, Double Down, Split) based on the player's hand and the dealer's up card.
+
+## Features
+
+- **Card Counter:**
+  - Updates running count based on cards dealt.
+  - Calculates the true count based on the remaining cards in the deck.
+  - Suggests the optimal bet based on the true count.
+
+- **Decision Making:**
+  - Uses a strategy chart loaded from a CSV file.
+  - Recommends actions based on the player's hand and dealer's up card.
+  - Handles special cases such as pairs and soft hands.
+
+## Setup and Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/card-counter.git
+   cd card-counter
