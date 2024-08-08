@@ -1,6 +1,6 @@
 # Card Counter and Blackjack Decision-Making Application
 
-This project is a Python-based application designed to help users count cards and make optimal decisions while playing blackjack. The application features a card counter that updates running and true counts and provides betting advice based on the true count. It also includes a decision-making module that guides users on the best actions to take based on their hand and the dealer's up card.
+This project is a Python-based application designed to help users count cards and make optimal decisions while playing blackjack. 
 
 ## Table of Contents
 
