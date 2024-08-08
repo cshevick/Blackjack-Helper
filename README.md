@@ -7,10 +7,6 @@ This project is a Python-based application designed to help users count cards an
 - [Overview](#overview)
 - [Features](#features)
 - [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [File Descriptions](#file-descriptions)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
