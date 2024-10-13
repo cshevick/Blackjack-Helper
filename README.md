@@ -26,9 +26,3 @@ This application helps blackjack players by providing two main functionalities:
   - Recommends actions based on the player's hand and dealer's up card.
   - Handles special cases such as pairs and soft hands.
 
-## Setup and Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/card-counter.git
-   cd card-counter
