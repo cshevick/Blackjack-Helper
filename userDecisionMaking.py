@@ -2,21 +2,21 @@ import pandas as pd
 
 csv_file_path = "blackjackBook.csv"
 
-# Load the DataFrame, ensuring 'Hand' column is read as strings
+
 df = pd.read_csv(csv_file_path, dtype={'Hand': str})
 
-# Map for action codes to words
+
 action_map = {
     'H': 'Hit',
     'D': 'Double Down',
     'S': 'Stand',
-    'SP': 'Split'  # Add 'SP' for split
+    'SP': 'Split'  
 }
 
 def calculate_hand_value(hand):
     """Calculate the best value for the hand considering Aces can be 1 or 11."""
     values = [0]
-    card_values = {'J': 10, 'Q': 10, 'K': 10, 'A': 1}  # Mapping face cards to their values
+    card_values = {'J': 10, 'Q': 10, 'K': 10, 'A': 1} 
 
     for card in hand:
         if card == 'A':
@@ -36,12 +36,12 @@ def calculate_hand_value(hand):
                 card_value = int(card)
             except ValueError:
                 print(f"Invalid card value: {card}")
-                return -1  # Invalid card value
+                return -1  
             new_values = []
             for value in values:
                 new_values.append(value + card_value)
             values = new_values
-    # Filter values to those 21 or less, and take the highest possible
+
     valid_values = [value for value in values if value <= 21]
     return max(valid_values) if valid_values else min(values)
 
@@ -49,13 +49,13 @@ def make_decision():
     def play_hand(hand):
         hand_value = calculate_hand_value(hand)
         if hand_value == -1:
-            return  # Exit if invalid card value
+            return  
 
         print(f"Initial hand value: {hand_value}")
         action = 'H'
 
         while action != 'S':
-            # Check if the column and row exist in the DataFrame
+          
             if dealer_card not in df.columns:
                 print(f"Dealer card '{dealer_card}' is not a valid column in the DataFrame.")
                 return
@@ -63,7 +63,7 @@ def make_decision():
                 print(f"Hand value '{hand_value}' is not a valid row in the DataFrame.")
                 return
 
-            # Get the action from the DataFrame
+         
             action_series = df.loc[df['Hand'] == str(hand_value), dealer_card]
             if action_series.empty:
                 print(f"No action found for hand value '{hand_value}' and dealer card '{dealer_card}'.")
@@ -82,7 +82,7 @@ def make_decision():
                 hand.append(added_card)
                 hand_value = calculate_hand_value(hand)
                 if hand_value == -1:
-                    return  # Exit if invalid card value
+                    return  
                 print("Your new sum is " + str(hand_value))
                 if hand_value > 21:
                     print("Sorry, you busted.")
@@ -92,7 +92,7 @@ def make_decision():
                 hand.append(added_card)
                 hand_value = calculate_hand_value(hand)
                 if hand_value == -1:
-                    return  # Exit if invalid card value
+                    return  
                 print("Your new sum is " + str(hand_value))
                 if hand_value > 21:
                     print("Sorry, you busted.")
